@@ -1,0 +1,76 @@
+python compress.py example.txt -c -o compressed.gz
+mport os
+import gzip
+import shutil
+import argparse
+
+class FileCompress:
+    def compress(self, filein, fileout):
+        with open(filein, 'rb') as f_in:
+            with gzip.open(fileout, 'wb') as f_out:
+                shutil.copyfileobj(f_in, f_out)
+
+    def decompress(self, filein, fileout):
+        with gzip.open(filein, 'rb') as f_in:
+            with open(fileout, 'wb') as f_out:
+                shutil.copyfileobj(f_in, f_out)
+
+def main():
+    parser = argparse.ArgumentParser(description="File compression and decompression utility")
+    parser.add_argument('file', help="Input file path")
+    parser.add_argument('-c', '--compress', action='store_true', help="Compress the file")
+    parser.add_argument('-d', '--decompress', action='store_true', help="Decompress the file")
+    parser.add_argument('-o', '--output', help="Output file name")
+
+    args = parser.parse_args()
+
+    if not os.path.exists(args.file):
+        print("Error: File does not exist")
+        return
+
+    file_compressor = FileCompress()
+It appears there are multiple issues occurring when trying to execute the script. Let's address them one by one:
+
+1. **Unexpected Token Error**: This error occurs when PowerShell encounters unexpected characters in the command. It seems to happen when there are special characters in the path or command. To fix this, make sure there are no special characters in the path or command, and also ensure proper spacing.
+
+2. **Command Not Found Error**: This error occurs when PowerShell cannot find the Python executable or the script file. To fix this, ensure that the paths to Python executable and the script file are correct. If there are spaces in the paths, enclose them in double quotes.
+
+3. **Execution Permission Error**: If PowerShell is unable to execute the script due to permission issues, you might need to specify the Python executable explicitly or use the `.\` notation to denote the current directory.
+
+Here's how you can try to execute the script again:
+
+```bash
+& "C:\Program Files\Python312\python.exe" "C:\Users\acer\OneDrive\Documents\Techimplement\Team-project\project.py" newfile.txt -c -o compressed_file.txt.gz
+```
+
+This command explicitly specifies the Python executable and the script file, ensuring proper execution. If there are still issues, please check the paths and ensure there are no special characters causing errors.
+It appears there are multiple issues occurring when trying to execute the script. Let's address them one by one:
+
+1. **Unexpected Token Error**: This error occurs when PowerShell encounters unexpected characters in the command. It seems to happen when there are special characters in the path or command. To fix this, make sure there are no special characters in the path or command, and also ensure proper spacing.
+
+2. **Command Not Found Error**: This error occurs when PowerShell cannot find the Python executable or the script file. To fix this, ensure that the paths to Python executable and the script file are correct. If there are spaces in the paths, enclose them in double quotes.
+
+3. **Execution Permission Error**: If PowerShell is unable to execute the script due to permission issues, you might need to specify the Python executable explicitly or use the `.\` notation to denote the current directory.
+
+Here's how you can try to execute the script again:
+
+```bash
+& "C:\Program Files\Python312\python.exe" "C:\Users\acer\OneDrive\Documents\Techimplement\Team-project\project.py" newfile.txt -c -o compressed_file.txt.gz
+```
+
+This command explicitly specifies the Python executable and the script file, ensuring proper execution. If there are still issues, please check the paths and ensure there are no special characters causing errors.
+It appears there are multiple issues occurring when trying to execute the script. Let's address them one by one:
+
+1. **Unexpected Token Error**: This error occurs when PowerShell encounters unexpected characters in the command. It seems to happen when there are special characters in the path or command. To fix this, make sure there are no special characters in the path or command, and also ensure proper spacing.
+
+2. **Command Not Found Error**: This error occurs when PowerShell cannot find the Python executable or the script file. To fix this, ensure that the paths to Python executable and the script file are correct. If there are spaces in the paths, enclose them in double quotes.
+
+3. **Execution Permission Error**: If PowerShell is unable to execute the script due to permission issues, you might need to specify the Python executable explicitly or use the `.\` notation to denote the current directory.
+
+Here's how you can try to execute the script again:
+
+```bash
+& "C:\Program Files\Python312\python.exe" "C:\Users\acer\OneDrive\Documents\Techimplement\Team-project\project.py" newfile.txt -c -o compressed_file.txt.gz
+```
+
+This command explicitly specifies the Python executable and the script file, ensuring proper execution. If there are still issues, please check the paths and ensure there are no special characters causing errors.
